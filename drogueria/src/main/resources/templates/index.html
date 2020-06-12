@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Usuarios</title>
-<link href="../static/css/bootstrap.css" rel="stylesheet"  th:href="@{/css/boostrap.css}">
+<link href="../static/css/bootstrap.css" rel="stylesheet"  th:href="@{/css/bootstrap.css}">
 
 </head>
 <body>
@@ -27,12 +27,12 @@
 					</tr>
 					
 					<tr th:each="usuario : ${list}">
-						<td th:text="${usuario.id"></td>
-						<td th:text="${usuario.nombre"></td>
-						<td th:text="${usuario.apellido"></td>
-						<td th:text="${usuario.correo"></td>
-						<td ><a class="btn btn-info" th:href="@{/save/{id}{id=${usuario.id}}}"> Editar</a><td>
-						<td ><a class="btn btn-danger" th:href="@{/delete/{id}{id=${usuario.id}}}"> Eliminar</a><td>
+						<td th:text="${usuario.id}"></td>
+						<td th:text="${usuario.nombre}"></td>
+						<td th:text="${usuario.apellido}"></td>
+						<td th:text="${usuario.correo}"></td>
+						<td ><a class="btn btn-info" th:href="@{/save/{id}(id=${usuario.id})}"> Editar</a><td>
+						<td ><a class="btn btn-danger" th:href="@{/delete/{id}(id=${usuario.id})}"> Eliminar</a><td>
 						
 					</tr>
 				</table>

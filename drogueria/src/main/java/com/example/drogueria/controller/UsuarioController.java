@@ -26,7 +26,7 @@ public class UsuarioController {
 	@RequestMapping("/")
 	public String index(Model model) {
 		
-		model.addAttribute("List", usuarioService.getAll());
+		model.addAttribute("list", usuarioService.getAll());
 		System.out.println(usuarioService.getAll());
 		return "index";
 	}
@@ -41,15 +41,16 @@ public class UsuarioController {
 		return "save";
 	}
 	
-	@PostMapping("/save/{id}")
+	@PostMapping("/save")
 	public String save(Usuario usuario, Model model) {
 		usuarioService.save(usuario);
-		return "redirect/:";
+		return "redirect:/";
 	}
 	
+	@GetMapping("/delete/{id}")
 	public String delete(@PathVariable Integer id, Model model) {
 		usuarioService.delete(id);
-		return "redirect/:";
+		return "redirect:/";
 	}
 
 }
