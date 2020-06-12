@@ -1,5 +1,6 @@
 package com.example.drogueria.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,35 +25,35 @@ public class MedicamentoController {
 		// TODO Auto-generated constructor stub
 	}
 	
-	@RequestMapping("/")
-	public String index(Model model) {
+	//@RequestMapping("/")
+	////public String index(Model model) {
 		
-		model.addAttribute("list", medicamentoService.getAll());
-		System.out.println(medicamentoService.getAll());
-		return "index";
-	}
+	//	model.addAttribute("list", medicamentoService.getAll());
+	//	System.out.println(medicamentoService.getAll());
+	//	return "index";
+	//}
 	
-	@GetMapping("/save/{id}")
-	public String showSave(@PathVariable("id")Integer id,Model model) {
-		if(id!=null && id !=0) {
-			model.addAttribute("usuario",medicamentoService.get(id));
-		}else {
-			model.addAttribute("usuario", new Medicamento());
-		}
-		return "save";
-	}
+	//@GetMapping("/save/{id}")
+	//public String showSave(@PathVariable("id")Integer id,Model model) {
+	//	if(id!=null && id !=0) {
+	//		model.addAttribute("medicamento",medicamentoService.get(id));
+	//	}else {
+	//		model.addAttribute("medicamento", new Medicamento());
+	//	}
+	//	return "save";
+	//}
 	
-	@PostMapping("/save")
-	public String save(Medicamento medicamento, Model model) {
-		medicamentoService.save(medicamento);
-		return "redirect:/";
-	}
+	//@PostMapping("/save")
+	//public String save(Medicamento medicamento, Model model) {
+	//	medicamentoService.save(medicamento);
+		//return "redirect:/";
+	//}
 	
-	@GetMapping("/delete/{id}")
-	public String delete(@PathVariable Integer id, Model model) {
-		medicamentoService.delete(id);
-		return "redirect:/";
-	}
+	////@GetMapping("/delete/{id}")
+	//public String delete(@PathVariable Integer id, Model model) {
+		//medicamentoService.delete(id);
+	//	return "redirect:/";
+	//}
 	
 
 }
